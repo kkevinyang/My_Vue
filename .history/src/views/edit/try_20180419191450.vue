@@ -77,7 +77,7 @@ export default{
           setTimeout(() => {
               lineCharts.addSeries(asyncData);
               lineCharts.hideLoading();
-          }, 20)
+          }, 2000)
       },
       mod(){
         this.options.title.text = 'lalaallala'

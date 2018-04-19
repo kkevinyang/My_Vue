@@ -2,7 +2,6 @@
   <div>
     <vue-highcharts :options="options" ref="lineCharts"></vue-highcharts>
     <button @click="load">load</button>
-    <button @click="mod">mod</button>
   </div>
 </template>
 
@@ -77,10 +76,7 @@ export default{
           setTimeout(() => {
               lineCharts.addSeries(asyncData);
               lineCharts.hideLoading();
-          }, 20)
-      },
-      mod(){
-        this.options.title.text = 'lalaallala'
+          }, 2000)
       }
     }
 }

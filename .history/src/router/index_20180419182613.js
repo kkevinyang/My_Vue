@@ -58,7 +58,7 @@ export const constantRouterMap = [
       {
         path: 'table',
         name: 'table',
-        component: () => import('@/views/edit/table'),
+        component: () => import('@/views/edit/try'),
         meta: { title: '表格操作', icon: 'table' }
       },
       {

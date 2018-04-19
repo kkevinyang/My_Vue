@@ -56,12 +56,6 @@ export const constantRouterMap = [
         meta: { title: '选择器', icon: 'tree' }
       },
       {
-        path: 'table',
-        name: 'table',
-        component: () => import('@/views/edit/table'),
-        meta: { title: '表格操作', icon: 'table' }
-      },
-      {
         path: 'try',
         name: 'try',
         component: () => import('@/views/edit/try'),
