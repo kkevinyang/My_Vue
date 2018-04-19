@@ -15,11 +15,15 @@
   "dependencies": {
     "axios": "0.17.1",
     "element-ui": "2.0.8",
+    "fish-ui": "^1.1.5",
     "js-cookie": "2.2.0",
+    "less": "^3.0.1",
+    "less-loader": "^4.1.0",
     "normalize.css": "7.0.0",
     "nprogress": "0.2.0",
     "vue": "2.5.10",
     "vue-router": "3.0.1",
+    "vue-tables-2": "^1.4.1",
     "vuex": "3.0.1"
   },
   "devDependencies": {
@@ -62,6 +66,7 @@
     "vue-loader": "13.5.0",
     "vue-style-loader": "3.0.3",
     "vue-template-compiler": "2.5.10",
+    "vuetable-2": "^1.7.5",
     "webpack": "3.10.0",
     "webpack-bundle-analyzer": "2.9.1",
     "webpack-dev-server": "2.9.7",

@@ -17,7 +17,7 @@ service.interceptors.request.use(config => {
   return config
 }, error => {
   // Do something with request error
-  console.log(error) // for debug
+  console.log('你的请求有问题啦:' + error) // for debug
   Promise.reject(error)
 })
 
@@ -53,7 +53,7 @@ service.interceptors.response.use(
     }
   },
   error => {
-    console.log('err' + error)// for debug
+    console.log('返回的错误信息是:' + error)// for debug
     Message({
       message: error.message,
       type: 'error',

@@ -36,7 +36,33 @@ export const constantRouterMap = [
       component: () => import('@/views/dashboard/index')
     }]
   },
-
+  {
+    path: '/edit',
+    component: Layout,
+    redirect: '/edit/form',
+    name: 'Edit',
+    meta: { title: 'Edit', icon: 'form' },
+    children: [
+      {
+        path: 'form',
+        name: 'form',
+        component: () => import('@/views/edit/index'),
+        meta: { title: '图表编辑', icon: 'form' }
+      },
+      {
+        path: 'select',
+        name: 'select',
+        component: () => import('@/views/edit/select'),
+        meta: { title: '选择器', icon: 'tree' }
+      },
+      {
+        path: 'try',
+        name: 'try',
+        component: () => import('@/views/edit/try'),
+        meta: { title: '尝试', icon: 'table' }
+      }
+    ]
+  },
   {
     path: '/example',
     component: Layout,
