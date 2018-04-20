@@ -1,13 +1,24 @@
 <template>
   <div>
-    <vue-highcharts :options="options" ref="lineCharts"></vue-highcharts>
+    <!-- <vue-highcharts :options="options" ref="lineCharts"></vue-highcharts> -->
     <button @click="load">load</button>
     <button @click="mod">mod</button>
+    <button @click="myload">myload</button>    
+    <button @click="newChart">newChart</button>
+
+    <div id="container" style="height: 400px" ref="myCharts"></div>
+
   </div>
 </template>
 
 <script>
-import VueHighcharts from 'vue2-highcharts'
+// import VueHighcharts from 'vue2-highcharts'
+
+
+// const { chart } = this.$refs.highcharts;
+
+// const { renderer } = this.$refs.highchartsRenderer;
+
 const asyncData = {
   name: 'Tokyo',
   marker: {
@@ -20,6 +31,7 @@ const asyncData = {
     }
   }, 23.3, 18.3, 13.9, 9.6]
 }
+
 export default{
     components: {
         VueHighcharts
@@ -28,7 +40,8 @@ export default{
       return{
         options: {
           chart: {
-            type: 'spline'
+            type: 'spline',
+            renderTo: 'container',
           },
           title: {
             text: 'Monthly Average Temperature'
@@ -80,7 +93,32 @@ export default{
           }, 20)
       },
       mod(){
-        this.options.title.text = 'lalaallala'
+        let lineCharts = this.$refs.lineCharts;
+        console.log('series:', lineCharts.options.title.text)
+        this.options.title.text = '修改名称成功！！！'
+        this.options.yAxis.title.text = '这里是y轴'
+        lineCharts.destroy()
+        // console.log('show:', lineCharts.setOptions)
+        // lineCharts.options = getNewOptions();        
+      },
+      myload(){
+        let lineCharts = this.$refs.lineCharts;
+        console.log('series:', lineCharts)
+        this.$refs.lineCharts.update({
+          title: {
+              text: '修改名称成功！！！'
+          }
+        });
+      },
+      newChart(){
+        this.$refs.myCharts = new Highcharts.Chart({
+            chart: {
+                renderTo: 'container'
+            },
+            series: [{
+                data: [29.9, 71.5, 106.4, 129.2, 144.0, 176.0, 135.6, 148.5, 216.4, 194.1, 95.6, 54.4]        
+            }]
+        });
       }
     }
 }

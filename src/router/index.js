@@ -41,31 +41,12 @@ export const constantRouterMap = [
     component: Layout,
     redirect: '/edit/form',
     name: 'Edit',
-    meta: { title: 'Edit', icon: 'form' },
     children: [
       {
         path: 'form',
         name: 'form',
         component: () => import('@/views/edit/index'),
-        meta: { title: '图表编辑', icon: 'form' }
-      },
-      {
-        path: 'select',
-        name: 'select',
-        component: () => import('@/views/edit/select'),
-        meta: { title: '选择器', icon: 'tree' }
-      },
-      {
-        path: 'table',
-        name: 'table',
-        component: () => import('@/views/edit/table'),
-        meta: { title: '表格操作', icon: 'table' }
-      },
-      {
-        path: 'try',
-        name: 'try',
-        component: () => import('@/views/edit/try'),
-        meta: { title: '尝试', icon: 'table' }
+        meta: { title: '图表编辑', icon: 'table' }
       }
     ]
   },
@@ -80,13 +61,13 @@ export const constantRouterMap = [
         path: 'table',
         name: 'Table',
         component: () => import('@/views/table/index'),
-        meta: { title: 'Table', icon: 'table' }
+        meta: { title: 'Table' }
       },
       {
         path: 'tree',
         name: 'Tree',
         component: () => import('@/views/tree/index'),
-        meta: { title: 'Tree', icon: 'tree' }
+        meta: { title: 'Tree' }
       }
     ]
   },
@@ -100,6 +81,43 @@ export const constantRouterMap = [
         name: 'Form',
         component: () => import('@/views/form/index'),
         meta: { title: 'Form', icon: 'form' }
+      }
+    ]
+  },
+  {
+    path: '/debug',
+    component: Layout,
+    meta: { title: 'Debug', icon: 'bug' },
+    children: [
+      {
+        path: 'index',
+        name: 'Form',
+        component: () => import('@/views/debug/index'),
+        meta: { title: '测试功能'}
+      },
+      {
+        path: 'select',
+        name: 'select',
+        component: () => import('@/views/debug/select'),
+        meta: { title: '选择器' }
+      },
+      {
+        path: 'table',
+        name: 'table',
+        component: () => import('@/views/debug/table'),
+        meta: { title: '表格操作' }
+      },
+      {
+        path: 'highchart',
+        name: 'highchart',
+        component: () => import('@/views/debug/highchart'),
+        meta: { title: 'highchart' }
+      },
+      {
+        path: 'vuechart',
+        name: 'vuechart',
+        component: () => import('@/views/debug/vuechart'),
+        meta: { title: 'vuechart' }
       }
     ]
   },
