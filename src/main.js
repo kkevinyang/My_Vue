@@ -8,7 +8,7 @@ import locale from 'element-ui/lib/locale/lang/en'
 import Vuetable from 'vuetable-2/src/components/Vuetable'
 import '@/styles/index.scss' // global css
 import FishUI from 'fish-ui'
-
+var VueCodeMirror = require('vue-codemirror-lite')
 import App from './App'
 import router from './router'
 import store from './store'
@@ -19,6 +19,7 @@ import '@/permission' // permission control
 Vue.use(ElementUI, { locale })
 Vue.use(FishUI)
 Vue.config.productionTip = false
+Vue.use(VueCodeMirror)
 
 new Vue({
   el: '#app',

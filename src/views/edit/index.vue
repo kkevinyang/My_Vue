@@ -21,7 +21,7 @@
 
     <div class="ui container">
       <!-- 表格 -->
-      <el-table :data="tableData" style="margin-left: 1%;width: 98%">
+      <el-table :data="tableData" style="margin-left: 1%;width: 98%" height="250">
         <el-table-column 
           v-for="col in columns"
           :prop="col.prop" :label="col.label" >

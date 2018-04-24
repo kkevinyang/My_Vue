@@ -114,11 +114,17 @@ export const constantRouterMap = [
         meta: { title: 'highchart' }
       },
       {
-        path: 'vuechart',
-        name: 'vuechart',
-        component: () => import('@/views/debug/vuechart'),
-        meta: { title: 'vuechart' }
+        path: 'codemirror',
+        name: 'codemirror',
+        component: () => import('@/views/debug/see_code'),
+        meta: { title: 'codemirror' }
       }
+      // {
+      //   path: 'vuechart',
+      //   name: 'vuechart',
+      //   component: () => import('@/views/debug/vuechart'),
+      //   meta: { title: 'vuechart' }
+      // }
     ]
   },
 

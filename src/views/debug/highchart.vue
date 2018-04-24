@@ -20,6 +20,9 @@ export default {
     created() {
         
     },
+    mounted(){
+        this.load()
+    },
     data() {
         return {
             options: {
