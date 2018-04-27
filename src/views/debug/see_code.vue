@@ -4,15 +4,40 @@
     extraKeys: {'Ctrl-Space': 'autocomplete'}
   }"></codemirror> -->
   <div class="app-container">
-
-    <codemirror
+  <el-row :gutter="20" justify="start" align="middle">
+    <!-- 左分栏 -->
+    <el-col :span="12">
+      <div class="grid-content bg-purple">
+        <!-- 配置区 -->
+        <codemirror
+          :value="code"
+          @change="change">
+        </codemirror>
+      </div>
+      <div class="grid-content bg-purple" style="margin-top:10px;">
+        <!-- 按钮组 -->
+        <!-- <el-button-group style="margin-left: 50px"> -->
+        <el-button raw-type="button" type="success" @click="load">RUN!</el-button>
+        <el-button type="primary" icon="el-icon-share"></el-button>
+        <el-button type="primary" icon="el-icon-delete"></el-button>
+        <!-- </el-button-group> -->
+      </div>
+    </el-col>
+    <!-- 右分栏 -->
+    <el-col :span="12">
+      <div class="grid-content bg-purple-light">
+        <div id="container" style="width: 600px;height:400px;"></div>
+      </div>
+    </el-col>
+  </el-row>
+    <!-- <codemirror
       :value="code"
       @change="change">
-    </codemirror>
+    </codemirror> -->
 
-    <el-button raw-type="button" @click="load">load</el-button>
+    <!-- <el-button raw-type="button" @click="load">load</el-button> -->
 
-    <div id="container" style="width: 600px;height:400px;"></div>
+    <!-- <div id="container" style="width: 600px;height:400px;"></div> -->
 
 
   </div>
@@ -80,3 +105,32 @@
     }
   }
 </script>
+
+<style>
+  /* .el-row {
+    margin-bottom: 20px;
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+  .el-col {
+    border-radius: 4px;
+  }
+  .bg-purple-dark {
+    background: #99a9bf;
+  }
+  .bg-purple {
+    background: #d3dce6;
+  }
+  .bg-purple-light {
+    background: #e5e9f2;
+  }
+  .grid-content {
+    border-radius: 4px;
+    min-height: 36px;
+  }
+  .row-bg {
+    padding: 10px 0;
+    background-color: #f9fafc;
+  } */
+</style>

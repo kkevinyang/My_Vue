@@ -46,7 +46,7 @@ export const constantRouterMap = [
         path: 'form',
         name: 'form',
         component: () => import('@/views/edit/index'),
-        meta: { title: '图表编辑', icon: 'table' }
+        meta: { title: '添加报表', icon: 'table' }
       }
     ]
   },
@@ -93,7 +93,7 @@ export const constantRouterMap = [
         path: 'index',
         name: 'Form',
         component: () => import('@/views/debug/index'),
-        meta: { title: '测试功能'}
+        meta: { title: '测试功能' }
       },
       {
         path: 'select',
