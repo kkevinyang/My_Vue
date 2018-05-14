@@ -114,10 +114,22 @@ export const constantRouterMap = [
         meta: { title: 'highchart' }
       },
       {
+        path: 'morechart',
+        name: 'morechart',
+        component: () => import('@/views/debug/more_chart'),
+        meta: { title: '多个图表' }
+      },
+      {
         path: 'codemirror',
         name: 'codemirror',
         component: () => import('@/views/debug/see_code'),
         meta: { title: 'codemirror' }
+      },
+      {
+        path: 'chart_list',
+        name: 'chart_list',
+        component: () => import('@/views/debug/chart_list'),
+        meta: { title: '读取配置过的图表' }
       }
       // {
       //   path: 'vuechart',

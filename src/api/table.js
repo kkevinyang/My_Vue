@@ -35,3 +35,22 @@ export function getResult(job_id, key) {
     }
   })
 }
+
+export function saveConf(job_id, key, config) {
+  return request({
+    url: '/api/chart/config/',
+    method: 'post',
+    data: {
+      key,
+      job_id,
+      config
+    }
+  })
+}
+
+export function getConf() {
+  return request({
+    url: '/api/chart/config/',
+    method: 'get'
+  })
+}

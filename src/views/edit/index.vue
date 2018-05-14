@@ -49,8 +49,8 @@
         <!-- 按钮组 -->
         <!-- <el-button-group style="margin-left: 50px"> -->
         <el-button raw-type="button" type="success" @click="run">RUN!</el-button>
-        <el-button type="primary" icon="el-icon-share"></el-button>
-        <el-button type="primary" icon="el-icon-delete"></el-button>
+        <el-button type="primary" icon="el-icon-share" @click="save">发送到展示页面</el-button>
+        <!-- <el-button type="primary" icon="el-icon-delete"></el-button> -->
         <!-- </el-button-group> -->
       </div>
     </el-col>
@@ -69,6 +69,8 @@
 import { getKey } from '@/api/table'
 import { getJob } from '@/api/table'
 import { getResult } from '@/api/table'
+import { saveConf } from '@/api/table'
+import { Message, MessageBox } from 'element-ui'
 
 import { codemirror } from 'vue-codemirror-lite'
 require('codemirror/mode/javascript/javascript')
@@ -84,11 +86,7 @@ export default {
       listLoading: false,
       code: 'const str = "hello world"',
       options:{
-        // "chart":{"type":"column"},
-        // "title":{"text":"水果消费情况"},
-        // "xAxis":{"categories":["cnt"]},
-        // "yAxis":{"title":{"text":"单位"}},
-        // "key_column":"test_group"
+        
       },
       code_style:{
         extraKeys: {'Ctrl-Space': 'autocomplete'},
@@ -112,11 +110,6 @@ export default {
       selectedJob: '',
       selectedKey:'',
       columns:  [  
-        // {prop: 'test_group', label: 'test_group'},
-        // {prop: 'cnt', label: 'cnt'},
-        // {prop: 'has_amt_cnt', label: 'has_amt_cnt'},
-        // {prop: 'dt', label: 'dt'},
-        // {prop: 'has_amt_rt', label: 'has_amt_rt'},
         ],
     }
   },
@@ -214,6 +207,25 @@ export default {
           }
       },
 
+    // 保存当前配置
+    save(){
+      console.log('selectedJob:', this.selectedJob)
+      console.log('selectedKey:', this.selectedKey)
+      console.log('code:', this.code)
+
+      saveConf(this.selectedJob, this.selectedKey, this.code).then(response => {
+          console.log('save_response:', response)
+          var status = response.code
+          if (status ==20000){
+             Message({
+                message: '保存成功',
+                type: 'sucesss',
+                duration: 2 * 1000
+              })
+          }
+    })
+    },
+
     // 解析配置文件
     parse_option(){
       var categories = []
@@ -243,7 +255,7 @@ export default {
       this.options.xAxis.categories = categories
     },
     change(code){
-      console.log('change_code:', code)
+      // console.log('change_code:', code)
       this.code = code
     }
 
