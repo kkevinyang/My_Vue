@@ -1,7 +1,7 @@
 <template>
 
     <div class="app-container">
-    <MyChart :jobKeyId="item.job_key" v-for="item in config_list" :options="item.config" :id="item.job_key" v-if="show"></MyChart>
+    <MyChart :jobKeyId="item.job_key" v-for="item in config_list" :options="item.config" :id="item.id" v-if="show">{item.id}</MyChart>
     </div>
 
 </template>

@@ -1,5 +1,5 @@
 <template>
-   <div id="chart_container" style="height:400px;"></div>
+   <div class="chart_container" style="height:400px;" :id="id"></div>
 </template>
 
 <script>
@@ -20,6 +20,10 @@ export default {
       default: null
     },
     jobKeyId: {
+      type: Number,
+      default: -1
+    },
+    id: {
       type: Number,
       default: -1
     },
@@ -79,7 +83,8 @@ export default {
             downloadXLS: '下载 XLS   文件',
             viewData: '查看数据表格'
           }
-          var chart = Highcharts.chart(String(this.jobKeyId), this.chart_option);
+          console.log('id:',this.id)
+          var chart = Highcharts.chart(String(this.id), this.chart_option);
         }
     },
     // 检查所需参数
