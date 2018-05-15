@@ -36,6 +36,16 @@ export function getResult(job_id, key) {
   })
 }
 
+export function getResultById(job_key_id) {
+  return request({
+    url: '/api/job/key/',
+    method: 'post',
+    data: {
+      job_key_id
+    }
+  })
+}
+
 export function saveConf(job_id, key, config) {
   return request({
     url: '/api/chart/config/',
